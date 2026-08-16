@@ -14,18 +14,17 @@ Instead, their transaction is securely signed and broadcasted to a **Mempool**.
 
 This repository contains the **TrueCash Miner Node** code. Anyone can run this node on their computer to monitor the TrueCash Mempool. When a transaction appears, your node automatically pays the tiny BNB gas fee to execute it on the blockchain, and the TrueCash Smart Contract instantly rewards you with highly profitable **TCASH Rewards**!
 
-## ⚠️ SECURITY: The "Burner Wallet" Rule
+## 🛡️ Recommended Setup: Dedicated Mining Wallet
 
-To operate this node, you must provide a wallet private key so the script can sign transactions and pay gas fees. 
+To operate this node, you must provide a wallet private key so the script can sign transactions and pay gas fees on your behalf. 
 
-**DO NOT USE YOUR MAIN CRYPTO WALLET.**
+For the highest security and cleanest accounting of your profits, we highly recommend creating a **dedicated mining wallet**:
+1. Create a new wallet address in MetaMask specifically for mining.
+2. Send a small amount of BNB ($2 to $5) to this new wallet to cover gas fees.
+3. Use the private key of this dedicated wallet in the miner.
+4. Periodically transfer your earned TCASH profits to your main storage wallet.
 
-1. Create a brand new, dedicated "Burner Wallet" in MetaMask.
-2. Send a tiny amount of BNB ($2 to $5) to this new wallet to cover gas fees.
-3. Use the private key of this Burner Wallet in the miner.
-4. Periodically transfer your earned TCASH profits from the Burner Wallet to your secure main wallet.
-
-Because your miner wallet only holds a few dollars of BNB, you can run this script with absolute peace of mind.
+Using a dedicated wallet is an industry best-practice for node operators. It ensures your main funds are kept safely in cold storage while your miner runs 24/7.
 
 ---
 
