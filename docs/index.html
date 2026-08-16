@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueCash Miner Node</title>
+    <link rel="icon" type="image/png" href="truecash_coin.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --emerald: #10b981;
+            --emerald-glow: rgba(16, 185, 129, 0.2);
+            --blue: #3b82f6;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-area img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+            margin-left: 20px;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-color);
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--emerald) 0%, var(--blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--emerald);
+            color: var(--slate-900);
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px var(--emerald-glow);
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Terminal Mockup */
+        .terminal {
+            background: #000;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-bottom: 80px;
+            text-align: left;
+        }
+
+        .terminal-header {
+            background: var(--slate-800);
+            padding: 10px 15px;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+
+        .terminal-body {
+            padding: 25px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #a3a3a3;
+        }
+
+        .t-user { color: #3b82f6; }
+        .t-cmd { color: #10b981; }
+        .t-time { color: #64748b; }
+        .t-success { color: #34d399; font-weight: bold; }
+        .t-highlight { color: #fcd34d; }
+
+        /* Quick Start */
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .step-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            background: var(--blue);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        .step-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .step-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #0f172a;
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            overflow-x: auto;
+        }
+
+        /* Alert */
+        .alert {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-left: 4px solid var(--emerald);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+        }
+
+        .alert h4 {
+            color: var(--emerald);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .alert p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-area">
+                <img src="truecash_coin.png" alt="TrueCash">
+                TrueCash Miner
+            </div>
+            <div class="nav-links">
+                <a href="https://truecash.cc" target="_blank">Main Website</a>
+                <a href="https://github.com/officialtruecash/truecash-miner">GitHub Repo</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Power the <span class="gradient-text">Zero-Gas</span> Economy.</h1>
+            <p>Run a decentralized relayer node on your computer. Pay microscopic gas fees for users, and earn a massive profit margin in TCASH automatically.</p>
+            <a href="https://github.com/officialtruecash/truecash-miner" class="btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                View on GitHub
+            </a>
+        </section>
+
+        <section class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-dot dot-red"></div>
+                <div class="terminal-dot dot-yellow"></div>
+                <div class="terminal-dot dot-green"></div>
+            </div>
+            <div class="terminal-body">
+                <div><span class="t-user">miner@node</span>:<span class="t-cmd">~</span>$ npm start</div>
+                <div><br></div>
+                <div><span class="t-time">[14:32:01]</span> Starting TrueCash Relayer Node v1.0.0...</div>
+                <div><span class="t-time">[14:32:02]</span> Connected to Binance Smart Chain Mainnet.</div>
+                <div><span class="t-time">[14:32:02]</span> Listening to TrueCash Mempool...</div>
+                <div><br></div>
+                <div><span class="t-time">[14:35:14]</span> ⚡ New Zero-Gas Intent detected in Mempool!</div>
+                <div><span class="t-time">[14:35:14]</span> Target: <span class="t-highlight">Checkout (0x4a12...9bC1)</span></div>
+                <div><span class="t-time">[14:35:15]</span> Processing payload... Signing transaction...</div>
+                <div><span class="t-time">[14:35:18]</span> <span class="t-success">✔ TRANSACTION CONFIRMED</span></div>
+                <div><span class="t-time">[14:35:18]</span> Gas Paid: 0.0001 BNB ($0.03)</div>
+                <div><span class="t-time">[14:35:18]</span> <span class="t-highlight">Reward Earned: 250 TCASH ($1.25)</span></div>
+                <div><span class="t-time">[14:35:18]</span> Profit Margin: +4100%</div>
+                <div><br></div>
+                <div><span class="t-time">[14:35:19]</span> Listening to TrueCash Mempool...</div>
+            </div>
+        </section>
+
+        <h2 class="section-title">Quick Start Guide</h2>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Clone the Repository</h3>
+                <p>Download the open-source node software directly from GitHub to your local machine.</p>
+                <div class="code-block">
+                    git clone https://github.com/officialtruecash/truecash-miner.git
+                </div>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Install Dependencies</h3>
+                <p>Navigate into the directory and install the required Node.js packages.</p>
+                <div class="code-block">
+                    cd truecash-miner<br>
+                    npm install
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Run the Node</h3>
+                <p>Start the miner. The setup wizard will securely prompt you for your Dedicated Mining Wallet.</p>
+                <div class="code-block">
+                    npm start
+                </div>
+            </div>
+        </div>
+
+        <div class="alert">
+            <h4>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                Best Practice: The Dedicated Mining Wallet
+            </h4>
+            <p>To operate this node, you must provide a wallet private key so the script can sign transactions on your behalf. <strong>We highly recommend creating a brand new, dedicated wallet address</strong> exclusively for mining. Fund it with just $2 to $5 of BNB for gas fees, and periodically sweep your TCASH profits to your main hardware wallet. This ensures absolute peace of mind while your node runs 24/7.</p>
+        </div>
+
+        <footer>
+            &copy; 2026 TrueCash Ecosystem. Built for decentralization.
+        </footer>
+    </div>
+
+</body>
+</html>
