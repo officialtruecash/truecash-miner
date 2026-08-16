@@ -2,3 +2,6 @@ node_modules/
 .env
 build/
 miner_config.json
+*.exe
+index-linux
+index-macos
