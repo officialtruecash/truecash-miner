@@ -68,9 +68,9 @@ Currently, standard gas fees on Binance Smart Chain are extremely low (~0.000005
 
 | Market Valuation (BNB/TCASH) | Est. Gas Cost (BNB) | Miner Reward (TCASH) | Profit Margin |
 | :--- | :--- | :--- | :--- |
-| **1 BNB = 50,000 TCASH** | ~0.000005 BNB | **1.0 TCASH** | **~300%** |
-| 1 BNB = 40,000 TCASH | ~0.000005 BNB | 0.8 TCASH | ~300% |
-| 1 BNB = 30,000 TCASH | ~0.000005 BNB | 0.6 TCASH | ~300% |
+| **1 BNB = 50,000 TCASH** | ~0.000005 BNB | **1.0 TCASH** | **Variable** |
+| 1 BNB = 40,000 TCASH | ~0.000005 BNB | 0.8 TCASH | Variable |
+| 1 BNB = 30,000 TCASH | ~0.000005 BNB | 0.6 TCASH | Variable |
 
 When your node executes a transaction, the TrueCash Smart Contract guarantees that the customer's transfer AND your mining reward are processed in the exact same atomic transaction block. 
 
