@@ -66,11 +66,11 @@ TrueCash utilizes a dynamic halving schedule pegged to the market valuation of T
 
 Currently, standard gas fees on Binance Smart Chain are extremely low (~0.000005 BNB). This costs the miner fractions of a cent per transaction.
 
-| Market Valuation (BNB/TRUECASH) | Est. Gas Cost (BNB) | Miner Reward (TRUECASH)
-| :--- | :--- | :--- | :--- |
-| **1 BNB = 50,000 TRUECASH** | ~0.000005 BNB | **1.0 TRUECASH**
-| 1 BNB = 40,000 TRUECASH | ~0.000005 BNB | 0.8 TRUECASH
-| 1 BNB = 30,000 TRUECASH | ~0.000005 BNB | 0.6 TRUECASH
+| Market Valuation (BNB/TRUECASH) | Est. Gas Cost (BNB) | Miner Reward (TRUECASH) |
+| :--- | :--- | :--- |
+| **1 BNB = 50,000 TRUECASH** | ~0.000005 BNB | **1.0 TRUECASH** |
+| 1 BNB = 40,000 TRUECASH | ~0.000005 BNB | 0.8 TRUECASH |
+| 1 BNB = 30,000 TRUECASH | ~0.000005 BNB | 0.6 TRUECASH |
 
 When your node executes a transaction, the TrueCash Smart Contract guarantees that the customer's transfer AND your mining reward are processed in the exact same atomic transaction block. 
 
@@ -81,3 +81,4 @@ TrueCash is a decentralized, community-driven economy. If you have suggestions t
 
 ## 📄 License
 This project is licensed under the MIT License.
+
