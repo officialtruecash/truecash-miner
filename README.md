@@ -36,8 +36,8 @@ Using a dedicated wallet is an industry best-practice for node operators. It ens
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/officialtruecash/truecash-miner-public.git
-cd truecash-miner-public
+git clone https://github.com/officialtruecash/truecash-miner.git
+cd truecash-miner
 ```
 
 ### 2. Install Dependencies
