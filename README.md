@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/TrueCash/truecash-miner/main/logo.png" alt="TrueCash Logo" width="120" />
+  
   <h1>TrueCash Zero-Gas Miner Node</h1>
   <p>Earn TCASH by relaying Zero-Gas Meta-Transactions on the Binance Smart Chain.</p>
 </div>
