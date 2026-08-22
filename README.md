@@ -12,17 +12,17 @@ TrueCash ($TRUECASH) is an ecosystem that completely eliminates gas fees for end
 
 Instead, their transaction is securely signed and broadcasted to a **Mempool**. 
 
-This repository contains the **TrueCash Miner Node** code. Anyone can run this node on their computer to monitor the TrueCash Mempool. When a transaction appears, your node automatically pays the tiny BNB gas fee to execute it on the blockchain, and the TrueCash Smart Contract instantly rewards you with highly profitable **TRUECASH Rewards**!
+This repository contains the **TrueCash Miner Node** code. Anyone can run this node on their computer to monitor the TrueCash Mempool. When a transaction appears, your node automatically pays the tiny BNB gas fee to execute it on the blockchain, and the TrueCash Smart Contract instantly rewards you with fixed \*\*TRUECASH Rewards\*\*!
 
 ## 🛡️ Recommended Setup: Dedicated Mining Wallet
 
 To operate this node, you must provide a wallet private key so the script can sign transactions and pay gas fees on your behalf. 
 
-For the highest security and cleanest accounting of your profits, we highly recommend creating a **dedicated mining wallet**:
+For the highest security and cleanest accounting of your node rewards, we highly recommend creating a **dedicated mining wallet**:
 1. Create a new wallet address in MetaMask specifically for mining.
 2. Send a small amount of BNB ($2 to $5) to this new wallet to cover gas fees.
 3. Use the private key of this dedicated wallet in the miner.
-4. Periodically transfer your earned TRUECASH profits to your main storage wallet.
+4. Periodically transfer your earned TRUECASH rewards to your main storage wallet.
 
 Using a dedicated wallet is an industry best-practice for node operators. It ensures your main funds are kept safely in cold storage while your miner runs 24/7.
 
@@ -60,17 +60,17 @@ Paste your Burner Wallet's private key and press Enter. The script will automati
 
 ---
 
-## 📈 Mining Economics & Profitability
+## 📈 Mining Economics
 
-TrueCash utilizes a dynamic halving schedule pegged to the market valuation of TRUECASH to ensure mining is always profitable.
+TrueCash utilizes a dynamic halving schedule pegged to the market valuation of TRUECASH to ensure sustainable node operations.
 
 Currently, standard gas fees on Binance Smart Chain are extremely low (~0.000005 BNB). This costs the miner fractions of a cent per transaction.
 
-| Market Valuation (BNB/TRUECASH) | Est. Gas Cost (BNB) | Miner Reward (TRUECASH) | Profit Margin |
+| Market Valuation (BNB/TRUECASH) | Est. Gas Cost (BNB) | Miner Reward (TRUECASH)
 | :--- | :--- | :--- | :--- |
-| **1 BNB = 50,000 TRUECASH** | ~0.000005 BNB | **1.0 TRUECASH** | **Variable** |
-| 1 BNB = 40,000 TRUECASH | ~0.000005 BNB | 0.8 TRUECASH | Variable |
-| 1 BNB = 30,000 TRUECASH | ~0.000005 BNB | 0.6 TRUECASH | Variable |
+| **1 BNB = 50,000 TRUECASH** | ~0.000005 BNB | **1.0 TRUECASH**
+| 1 BNB = 40,000 TRUECASH | ~0.000005 BNB | 0.8 TRUECASH
+| 1 BNB = 30,000 TRUECASH | ~0.000005 BNB | 0.6 TRUECASH
 
 When your node executes a transaction, the TrueCash Smart Contract guarantees that the customer's transfer AND your mining reward are processed in the exact same atomic transaction block. 
 
