@@ -5,8 +5,8 @@ const fs = require('fs');
 const path = require('path');
 
 // TrueCash Protocol Constants
-const TRUECASH_ADDRESS = "0x6eBB428a6EDB41EF823634dF008098FE818EA208";
-const PAYMASTER_ADDRESS = "0xA72408Afa36a7411694aaA799d08BB633496968A"; // Updated Mainnet Paymaster
+const TRUECASH_ADDRESS = "0xda70435038eF6497cb024858405AfcB43604f1EC";
+const PAYMASTER_ADDRESS = "0x9796FdD2dbcD79831b265D7265E344e3EA45cB30"; // V2 Mainnet Paymaster
 
 // Config
 const RPC_URL = process.env.RPC_URL || "https://bsc-dataseed.binance.org/";
@@ -100,7 +100,7 @@ console.log(`
    | || |  | |_| |  __/___) | (_| \\__ \\ | | |
    |_||_|   \\__,_|\\___|____/ \\__,_|___/_| |_|
                                              
-   --- Zero-Gas Miner Node (v1.0.0) ---
+   --- Zero-Gas Miner Node (v2.0.0) ---
 `);
 
 const configPath = path.join(process.cwd(), 'miner_config.json');
