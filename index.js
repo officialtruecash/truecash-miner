@@ -6,7 +6,7 @@ const path = require('path');
 
 // TrueCash Protocol Constants
 const TRUECASH_ADDRESS = "0xda70435038eF6497cb024858405AfcB43604f1EC";
-const PAYMASTER_ADDRESS = "0x9796FdD2dbcD79831b265D7265E344e3EA45cB30"; // V2 Mainnet Paymaster
+const PAYMASTER_ADDRESS = "0xd0f4d0019c260AD86E55c4b58D2Cd02CCe02E7A1"; // V2 Mainnet Paymaster
 
 // Config
 const RPC_URL = process.env.RPC_URL || "https://bsc-dataseed.binance.org/";
