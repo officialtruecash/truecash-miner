@@ -41,7 +41,7 @@ async function startMiner(privateKey) {
                 const response = await fetch(`${BACKEND_URL}/api/mempool/pending`);
                 const pendingJob = await response.json();
 
-                if (pendingJob) {
+                if (pendingJob && pendingJob.order_id) {
                     console.log(`\n[!] Incoming Job: Processing Order ${pendingJob.order_id}...`);
                     
                     try {
